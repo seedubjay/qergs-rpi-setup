@@ -3,6 +3,7 @@ flash microSD card
 in `sudo raspi-config`, set hostname to rpiXX
 
 add `/etc/wpa_supplicant/wpa_supplicant.conf`
+
 '''
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=0
@@ -22,5 +23,6 @@ network={
 	password="XXXXXXXXXX"
 }
 '''
-with token from [https://tokens.csx.cam.ac.uk/](UIS)
+
+with token from [UIS](https://tokens.csx.cam.ac.uk/)
 
