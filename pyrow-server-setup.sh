@@ -19,8 +19,9 @@ ATTR{idProduct}=="0003",
 MODE="666"
 ' > /etc/udev/rules.d/99-pm5.rules
 
-wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip -O /home/pi/main.zip
-unzip /home/pi/main.zip -O /home/pi/qergs-rpi-server
+wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip -O main.zip
+unzip main.zip -O /home/pi/qergs-rpi-server
+rm main.zip
 
 echo '[Unit]
 Description=QErgs Server
