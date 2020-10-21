@@ -19,8 +19,8 @@ ATTR{idProduct}=="0003",
 MODE="666"
 ' > /etc/udev/rules.d/99-pm5.rules
 
-wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip
-unzip main.zip -d qergs-rpi-server
+wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip -O /home/pi/qergs-rpi-server.zip
+unzip /home/pi/qergs-rpi-server.zip
 
 echo '[Unit]
 Description=QErgs Server
@@ -30,6 +30,8 @@ After=networking.service
 Restart=on-failure
 RestartSec=5s
 ExecStart=python3 /home/pi/qergs-rpi-server/server.py
+[Install]
+WantedBy=multi-user.target
 ' > /etc/systemd/system/qergs-server.service
 
 systemctl daemon-reload
