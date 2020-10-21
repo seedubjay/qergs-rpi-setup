@@ -1,5 +1,5 @@
 apt-get install libusb-dev libudev-dev usbutils libatlas-base-dev python3-pip
-pip3 install pyusb libusb numpy
+pip3 install pyusb libusb numpy flask flask-cors
 
 echo 'SUBSYSTEM=="usb",
 ATTR{idVendor}=="17a4",
