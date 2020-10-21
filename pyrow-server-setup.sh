@@ -20,8 +20,9 @@ MODE="666"
 ' > /etc/udev/rules.d/99-pm5.rules
 
 wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip -O main.zip
-unzip main.zip -d /home/pi/qergs-rpi-server
+unzip main.zip
 rm main.zip
+mv qergs-rpi-server-main /home/pi/qergs-rpi-server
 
 echo '[Unit]
 Description=QErgs Server
