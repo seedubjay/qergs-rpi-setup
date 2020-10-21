@@ -1,6 +1,8 @@
-flash microSD card
+flash microSD card with standard Lite image
 
-in `sudo raspi-config`, set hostname to rpiXX
+in `sudo raspi-config`, set hostname to rpiXX and enable ssh
+
+generate token from [UIS](https://tokens.csx.cam.ac.uk/)
 
 add `/etc/wpa_supplicant/wpa_supplicant.conf`
 
@@ -24,5 +26,18 @@ network={
 }
 ```
 
-with token from [UIS](https://tokens.csx.cam.ac.uk/)
+in the file `/lib/dhcpd/dhcpd-hooks/10-wpa_supplicant`, change the line
 
+```
+wpa_supplicant_driver="${wpa_supplicant_driver:-nl80211,wext}"
+```
+
+to
+
+```
+wpa_supplicant_driver="${wpa_supplicant_driver:-wext,nl80211}"
+```
+
+reboot, and note IP on restart
+
+scp `setup.sh` to machine and run it with `sudo` privileges
