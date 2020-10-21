@@ -1,4 +1,4 @@
-apt-get install libusb-dev libudev-dev usbutils python3-pip
+apt-get install libusb-dev libudev-dev usbutils libatlas-base-dev python3-pip
 pip3 install pyusb libusb numpy
 
 echo 'SUBSYSTEM=="usb",
