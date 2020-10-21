@@ -4,7 +4,7 @@ in `sudo raspi-config`, set hostname to rpiXX
 
 add `/etc/wpa_supplicant/wpa_supplicant.conf`
 
-'''
+```
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=0
 country=GB
@@ -22,7 +22,7 @@ network={
 	identity="XXX+rpiXX@cam.ac.uk"
 	password="XXXXXXXXXX"
 }
-'''
+```
 
 with token from [UIS](https://tokens.csx.cam.ac.uk/)
 
