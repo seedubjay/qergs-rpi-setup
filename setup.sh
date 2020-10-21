@@ -3,15 +3,15 @@
 wget http://www.virtualhere.com/sites/default/files/usbserver/vhusbdarm -O /usr/sbin/vhusbdarm
 chmod +x /usr/sbin/vhusbdarm
 
-echo "
+echo '
 [Unit]
 Description=Announce IP
 Requires=networking.service
 After=networking.service
 [Service]
-ExecStart=sh -c 'curl -X POST https://frozen-island-91924.herokuapp.com/$(hostname)/$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')'
+ExecStart=sh -c "curl -X POST https://frozen-island-91924.herokuapp.com/$(hostname)/$(ip -4 addr show wlan0 | grep -oP '\''(?<=inet\s)\d+(\.\d+){3}'\'')"
 Type=oneshot
-" > /etc/systemd/system/announce-ip.service
+' > /etc/systemd/system/announce-ip.service
 
 echo "
 [Unit]
