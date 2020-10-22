@@ -33,7 +33,7 @@ After=networking.service
 [Service]
 Restart=on-failure
 RestartSec=5s
-ExecStart=python3 /home/pi/qergs-rpi-server/server.py
+ExecStart=python3 /home/pi/qergs-server/server.py
 [Install]
 WantedBy=multi-user.target
 ' > /etc/systemd/system/qergs-server.service
