@@ -1,3 +1,4 @@
+apt install git
 apt-get install libusb-dev libudev-dev usbutils libatlas-base-dev python3-pip
 pip3 install pyusb libusb numpy flask flask-cors
 
@@ -19,10 +20,11 @@ ATTR{idProduct}=="0003",
 MODE="666"
 ' > /etc/udev/rules.d/99-pm5.rules
 
-wget https://github.com/seedubjay/qergs-rpi-server/archive/main.zip -O main.zip
-unzip main.zip
-rm main.zip
-mv qergs-rpi-server-main /home/pi/qergs-rpi-server
+if [ -d "/home/pi/qergs-server" ]; then
+    rm -rf /home/pi/qergs-server
+fi
+mkdir /home/pi/qergs-server
+git clone https://github.com/seedubjay/qergs-rpi-server.git /home/pi/qergs-server
 
 echo '[Unit]
 Description=QErgs Server
